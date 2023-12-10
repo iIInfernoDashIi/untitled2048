@@ -2,15 +2,20 @@
 
 Клон популярной игры 2048 на Flutter'е
 
-## Getting Started
+## Как играть?
 
-This project is a starting point for a Flutter application.
+**Объединяйте** пары блоки с одинаковыми значениями,  
+**Получайте** за это очки равные сумме двух блоков,  
+**Игра закончится**, когда не останется возможных ходов.
 
-A few resources to get you started if this is your first Flutter project:
+Поиграть можно в [браузере](https://iiinfernodashii.github.io/untitled2048/) или на телефоне скачав [APK файл](https://github.com/iIInfernoDashIi/untitled2048/releases/latest).
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Управление:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Двигайте блоки курсором и клавишами WASD на компьютере, или движением пальца в соответствующую сторону на телефоне.
+
+Используйте ![undo](https://github.com/iIInfernoDashIi/untitled2048/assets/51493954/228d1494-79fc-4cef-bd26-242732662d8a) чтобы вернутся на один ход назад. Только на **один**.
+
+Зажмите ![refresh](https://github.com/iIInfernoDashIi/untitled2048/assets/51493954/44e289b9-25d8-41f9-a513-80f917a5a860) чтобы начать новую игру.
+
+
