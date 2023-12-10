@@ -143,65 +143,68 @@ class HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                AspectRatio(
-                  aspectRatio: 1,
-                  child: GestureDetector(
-                    onVerticalDragUpdate: ((details) {
-                      if (moved) return;
-                      if (details.primaryDelta !< 0) {
-                        if (game.move(Direction.up)) moved = true;
-                      }
-                      if (details.primaryDelta !> 0) {
-                        if (game.move(Direction.down)) moved = true;
-                      }
-                      if (game.lose) showLoseDialog();
-                      setState(() {});
-                    }),
-                    onVerticalDragEnd: ((details) {
-                      moved = false;
-                    }),
-                    onHorizontalDragUpdate: ((details) {
-                      if (moved) return;
-                      if (details.primaryDelta !< 0) {
-                        if (game.move(Direction.left)) moved = true;
-                      }
-                      if (details.primaryDelta !> 0) {
-                        if (game.move(Direction.right)) moved = true;
-                      }
-                      if (game.lose) showLoseDialog();
-                      setState(() {});
-                    }),
-                    onHorizontalDragEnd: ((details) {
-                      moved = false;
-                    }),
-                    child: GridView.builder(
-                      physics: const NeverScrollableScrollPhysics(),
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 4,
-                        mainAxisSpacing: 4.0,
-                        crossAxisSpacing: 4.0,
-                        childAspectRatio: 1.0,
-                      ),
-                      itemCount: 16,
-                      itemBuilder: (BuildContext context, index) {
-                        var value = game.grid[index ~/ 4][index % 4];
-                        return AnimatedContainer(
-                          curve: Curves.bounceOut,
-                          duration: const Duration(milliseconds: 150),
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: tileColors[value] ?? Colors.black,
-                            borderRadius: BorderRadius.circular(8)
-                          ),
-                          child: (value != 0) ? Text(
-                            value.toString(),
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 32,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height - 260,
+                  child: AspectRatio(
+                    aspectRatio: 1,
+                    child: GestureDetector(
+                      onVerticalDragUpdate: ((details) {
+                        if (moved) return;
+                        if (details.primaryDelta !< 0) {
+                          if (game.move(Direction.up)) moved = true;
+                        }
+                        if (details.primaryDelta !> 0) {
+                          if (game.move(Direction.down)) moved = true;
+                        }
+                        if (game.lose) showLoseDialog();
+                        setState(() {});
+                      }),
+                      onVerticalDragEnd: ((details) {
+                        moved = false;
+                      }),
+                      onHorizontalDragUpdate: ((details) {
+                        if (moved) return;
+                        if (details.primaryDelta !< 0) {
+                          if (game.move(Direction.left)) moved = true;
+                        }
+                        if (details.primaryDelta !> 0) {
+                          if (game.move(Direction.right)) moved = true;
+                        }
+                        if (game.lose) showLoseDialog();
+                        setState(() {});
+                      }),
+                      onHorizontalDragEnd: ((details) {
+                        moved = false;
+                      }),
+                      child: GridView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 4,
+                          mainAxisSpacing: 4.0,
+                          crossAxisSpacing: 4.0,
+                          childAspectRatio: 1.0,
+                        ),
+                        itemCount: 16,
+                        itemBuilder: (BuildContext context, index) {
+                          var value = game.grid[index ~/ 4][index % 4];
+                          return AnimatedContainer(
+                            curve: Curves.bounceOut,
+                            duration: const Duration(milliseconds: 150),
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: tileColors[value] ?? Colors.black,
+                              borderRadius: BorderRadius.circular(8)
                             ),
-                          ) : null,
-                        );
-                      },
+                            child: (value != 0) ? Text(
+                              value.toString(),
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 32,
+                              ),
+                            ) : null,
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ),
