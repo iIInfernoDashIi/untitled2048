@@ -1,46 +1,16 @@
 # untitled2048
 
-Клон популярной мобильной игры **2048**, в которой нужно соединять вместе одинаковые числа чтобы получить число 2048.
+Клон популярной игры 2048 на Flutter'е
 
-## Функции
+## Getting Started
 
-- Перемещение клеток с помощью свайпа экрана вверх/вниз/влево/вправо
-- Сохранение наилучшего результата
-- Возможность сбросить игру в любой момент
-- Выбор из 2 тем: светлая и тёмная
+This project is a starting point for a Flutter application.
 
-## Экраны и наброски их дизайна
+A few resources to get you started if this is your first Flutter project:
 
-В приложении фигурирует только 1 экран с самой игрой:  
-![image](https://github.com/iIInfernoDashIi/untitled2048/assets/51493954/fbffbdd9-19d3-4286-a75e-ccec5e86733e)
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-Помимо него присутствует одно диалоговое окно, появляющееся при проигрыше (когда нет возможных ходов):
-![image](https://github.com/iIInfernoDashIi/untitled2048/assets/51493954/92fac245-d83e-413e-853c-9565fca17cc8)
-
-## Используемые виджеты
-
-```py
-Scaffold
-├── AppBar
-│   ├── IconButton #Смена темы
-│   └── GestureDetector #Сброс игры (требует зажатия 1 секунду)
-│       └── Padding
-│           └── Stack
-│               ├── CircularProgressIndicator
-│               └── Icon
-└── Container
-    └── Center
-        └── Column
-            ├── Row
-            │   ├── Text #Счёт
-            │   └── Row
-            │       ├── Icon
-            │       └── Text #Лучий счёт
-            └── AspectRatio #Сохраняет квадратное соотношение сетки ниже
-                └── GestureDetector
-                    └── GridView #Игровое поле 4x4
-                        ├── Container
-                        ├── Container
-                        └── <...> 
-```
-
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
